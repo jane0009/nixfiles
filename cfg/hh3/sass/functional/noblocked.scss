@@ -1,0 +1,3 @@
+[class*='groupStart']:not([class*='message']) {
+  display: none;
+}

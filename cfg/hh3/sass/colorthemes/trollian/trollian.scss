@@ -1,0 +1,31 @@
+.theme-dark, .theme-light{
+  --trollian-pink: #ff6082;
+  --trollian-gray: #4c4e4b;
+
+  //whatever stuff
+	
+	--l-normal: #D5B975;
+    --l-hover: #EDDBB1;
+    --l-active: #fff;
+	
+	--channels-alt: #8e9297;
+    --alt-normal: #b9bbbe;
+    --alt-hover: #dcddde;
+    --alt-active: #fff;
+    --alt-muted: #4f545c;
+	
+	--p-primary: #FDB302;
+	--p-secondary: #C48A00;
+  --p-dark: #845A00;
+	--p-teriary: #FFF700;
+
+	--alt-modifier-hover: rgba(79,84,92,0.16);
+    --alt-modifier-active: rgba(79,84,92,0.24);
+    --alt-modifier-selected: rgba(79,84,92,0.32);
+    --alt-modifier-accent: hsla(0,0%,100%,0.06);
+
+	--on-black-color: rgba(40, 40, 40, 1);
+}
+@import './gradient.scss';
+@import './chumproll.scss';
+@import './topbar.scss';

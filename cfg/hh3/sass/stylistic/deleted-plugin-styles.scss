@@ -1,0 +1,21 @@
+.deleted-message {
+    color: #dcddde !important;
+    border-radius: 10px;
+    background-color: rgba(240, 71, 71, 5);
+
+    & img {
+        filter: grayscale(100%) sepia(30%) hue-rotate(300deg) saturate(10);
+    }
+
+    &>[class^='markup'] {
+        &>*[class*='edited'] {
+            font-size: 0.625rem;
+            color: #ffffff;
+        }
+    }
+}
+
+.antiDelete-deleted-suffix {
+    font-size: 0.625rem;
+    color: #ffffff;
+}

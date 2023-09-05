@@ -1,0 +1,37 @@
+[class*="form-"] {
+	background-color: var(--p-primary);
+}
+ [class*="form-"]:before {
+	content: none;
+}
+ [class*="scrollableContainer-"] {
+	border: .5vh solid;
+	border-color: var(--p-secondary);
+	border-radius: 0px;
+}
+ [class*="channelTextAreaDisabled-"] {
+	background-color: var(--p-secondary);
+	border-radius: 0px;
+}
+ [class*="chatContent-"],  [class*="tabBody-"] {
+	background-color: var(--p-primary);
+}
+ [class*="messagesWrapper-"],  [class*="peopleColumn-"],  [class*="nowPlayingColumn-"] {
+	background-color: var(--background-primary);
+  margin: 16px;
+	border: .5vh solid;
+	border-color: var(--p-secondary);
+}
+
+[class*=scrollableContainer-] {
+  background-color: var(--background-primary);
+}
+
+ .chat-2ZfjoI,  .container-2cd8Mz {
+	border-left: .5vh solid;
+	border-color: var(--p-teriary);
+	background-color: var(--p-primary);
+}
+ .input-1nrc5P {
+	color: white;
+}

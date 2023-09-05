@@ -1,0 +1,27 @@
+// Fixes DM list
+span[class^="dms-"] {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+
+  margin-top: 0;
+  &:empty {
+    margin-bottom: 0;
+  }
+
+  div[class^="guild-"] {
+    left: 0;
+    margin: 0;
+    margin-left: 8px;
+    margin-top: 8px;
+
+    position: relative;
+  }
+}
+
+& > div[style^="opacity:"]:not([class]) {
+  margin: 0;
+  &:nth-child(#{$guild-columns}n+2) {
+    margin-left: 3.656px;
+  }
+}

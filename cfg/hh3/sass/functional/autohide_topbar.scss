@@ -1,0 +1,15 @@
+div[class^='title-'] {
+    margin-bottom: -43px;
+    transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transform: translateY(-40px);
+}
+
+div[class^='title-']:hover, div[class^='title-']:focus-within {
+    transform: translateY(0px);
+    transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+    padding: 40px 0px;
+}
+
+div[class^='popout-open'] {
+  top: -30px;
+}

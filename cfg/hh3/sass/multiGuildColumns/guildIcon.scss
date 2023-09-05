@@ -1,0 +1,124 @@
+// Styles for the individual guild icons
+
+& > div[class^="listItem-"]:nth-of-type(1)[class] {
+  width: 100%;
+  [class^="pill-"] {
+    display: none;
+  }
+
+  div[class*="listItemWrapper-"] > div[class*="wrapper-"] {
+    margin: auto;
+    svg {
+      left: 0;
+      right: 0;
+      position: absolute;
+      //margin: 0 auto;
+    }
+  }
+}
+
+// ul[data-list-id="guildsnav"][role="tree"]
+//   [class*="scrollerBase-"]
+& > div[aria-label] > [class*="wrapper-"] {
+  @import "./folders.scss";
+}
+
+div[data-ref-id="guildsnav"] {
+  padding: 0 0 0 4px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+div[class^="container-"],
+div[class^="listItem-"],
+// server folders
+ div[data-ref-id^="guildsnav-"][role="treeitem"] {
+  margin: 2px #{$guild-columns}px;
+  width: auto;
+  display: inline-block;
+
+  &[class*="selected-"]:before {
+    display: none;
+  }
+
+  svg mask rect {
+    display: none;
+  }
+
+  [class^="blobContainer-"],
+  [class^="blob-"] {
+    transform: none;
+    width: 50px;
+  }
+
+  [class^="badgeWrapper-"] {
+    [class^="lowerBadge-"] {
+      bottom: -2px;
+      right: -2px;
+    }
+  }
+
+  [class^="pill-"] {
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    z-index: 1;
+    & > span {
+      left: 4px;
+      top: 0;
+      height: 8px !important;
+      width: 8px !important;
+      background: #f0f0f0;
+      border-radius: 100% !important;
+      border: 1px solid red;
+
+      transform: none !important;
+
+      z-index: 1;
+    }
+  }
+
+  // Fuck off discord.
+  &:hover [class^="pill-"] span {
+    //opacity: 0 !important;
+  }
+
+  &:not(:hover) [class^="pill-"] span {
+    //opacity: 0 !important;
+
+    &[style^="opacity: 0.7"],
+    &[style^="opacity: 1"] {
+      opacity: 1 !important;
+    }
+  }
+
+  &[class*="unread-"]::before {
+    left: -2px;
+    top: 5px;
+    z-index: 9000;
+
+    height: 10px;
+    margin-top: -6px;
+    background-color: #8a8e94;
+  }
+  &:first-child {
+    position: relative;
+    left: 0;
+    // margin: auto;
+  }
+
+  foreignObject img {
+    background: #2f3136;
+  }
+
+  [class^="guildSeparator-"] {
+    width: calc(#{$guild-list-width} - 24px);
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+
+div[style] > div[class^="listItem-"] {
+  width: 50px;
+}

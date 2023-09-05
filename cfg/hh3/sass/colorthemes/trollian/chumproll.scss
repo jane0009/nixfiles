@@ -1,0 +1,20 @@
+[class*="members-"] {
+  background-color: var(--trollian-pink);
+  padding: 0;
+  margin: 0;
+}
+[aria-label*="Members"] {
+  background-color: white;
+  left: 10px;
+  height: 100vh !important;
+  &::before {
+    content: "ChumpRoll";
+    border: 1px solid white;
+    background: var(--trollian-gradient);
+    color: white;
+    padding: 2px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    display: flex;
+  }
+}

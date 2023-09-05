@@ -1,0 +1,57 @@
+.theme-dark, .theme-light{
+	// --font-primary: courier_prime, "Courier New", Courier, monospace;
+	// --font-display: courier_prime, "Courier New", Courier, monospace;
+	// --font-code: courier_prime, "Courier New", Courier, monospace;
+	
+	--l-normal: #D5B975;
+    --l-hover: #EDDBB1;
+    --l-active: #fff;
+	
+	--channels-alt: #8e9297;
+    --alt-normal: #b9bbbe;
+    --alt-hover: #dcddde;
+    --alt-active: #fff;
+    --alt-muted: #4f545c;
+	
+	--p-primary: #FDB302;
+	--p-secondary: #C48A00;
+  --p-dark: #845A00;
+	--p-teriary: #FFF700;
+
+	--alt-modifier-hover: rgba(79,84,92,0.16);
+    --alt-modifier-active: rgba(79,84,92,0.24);
+    --alt-modifier-selected: rgba(79,84,92,0.32);
+    --alt-modifier-accent: hsla(0,0%,100%,0.06);
+
+	--on-black-color: rgba(40, 40, 40, 1);
+}
+.theme-dark {
+	--background-primary: #434547;
+	--background-secondary: #737577;
+	--background-mentioned: rgba(250,166,26,0.15);
+	--background-mentioned-hover: rgba(250,166,26,0.18);
+	--background-message-hover: rgba(216,216,220,0.08);
+	--scrollbar-auto-thumb: #40444A;
+	
+	--server-icon-col: white;
+}
+.theme-light {
+	--channeltextarea-background: #fff;
+	
+	--background-modifier-hover: rgba(116,127,141,0.09);
+    --background-modifier-active: rgba(116,127,141,0.18);
+    --background-modifier-selected: rgba(116,127,141,0.27);
+	--background-message-hover: rgba(6,6,7,0.06);
+	
+	--server-icon-col: black;
+}
+
+@import './font.scss';
+@import './background.scss';
+@import './members.scss';
+@import './messages.scss';
+@import './topbar.scss';
+@import './channel_list.scss';
+@import './friend_list.scss';
+@import './dms.scss';
+@import './popout.scss';

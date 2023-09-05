@@ -1,0 +1,15 @@
+{
+    "files.autoSave": "afterDelay",
+    "workbench.colorTheme": "2077",
+    "editor.codeActionsOnSave": {
+        
+    },
+    "[c]": {
+      "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "github.copilot.enable": {
+      "*": true,
+      "plaintext": false,
+      "scminput": false
+    }
+}

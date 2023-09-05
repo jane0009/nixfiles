@@ -1,0 +1,25 @@
+//BG COLOR MEDIUM
+[class*='chatContent'],
+[class*='messagesWrapper'],
+[class*='scrollerWrap'] [class*='scroller'] {
+  background-color: #666566;
+}
+
+//BG COLOR DARK
+[class*='panels'] [class*='container'],
+[class*='container'] [class*='clickable'] [class*='header'],
+[class*='membersWrap'],
+[class*='expandedFolderBackground'],
+[class*='listItem'] [class*='wrapper'] [class*='folderIconWrapper'] {
+  background-color: #563546;
+}
+
+//SELECTED COLOR
+foreignObject [class*='selected'] [class*='childWrapper'] {
+  background-color: #858f87 !important;
+}
+
+//BG COLOR LIGHT
+[class*='listItem'] [class*='childWrapper'] {
+  background-color: #767576;
+}

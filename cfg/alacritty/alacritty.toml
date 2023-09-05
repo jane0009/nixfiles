@@ -1,0 +1,28 @@
+env:
+ padding:
+    x: 2
+    y: 2
+  decorations: transparent
+  opacity: 0.85
+  decorations_theme_variant: Dark
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    family: Fira Code
+  size: 8.0
+colors:
+  primary:
+    background: '#1d1f21'
+    dim_foreground: '#828482'
+    bright_foreground: '#eaeaea'
+  normal:
+    black: '#1d1f21'
+    red: '#cc6666'
+    green: '#b5bd68'
+    yellow: '#f0c674'
+    blue: '#81a2be'
+    magenta: '#b294bb'
+    cyan: '#8abeb7'
+    white: '#c5c8c6'

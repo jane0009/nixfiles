@@ -1,0 +1,36 @@
+// make username tags match the color of the nickname
+//DEPRECATED: now achieved through patching
+/*[class*='showTag'] {
+  color: inherit !important;
+}*/
+
+// move the charcount location
+[class^='charcount-counter'] {
+  bottom: -5px !important;
+}
+
+[class*='bcb-codeblock-copy']::after {
+  right: 23px;
+  top: 2px;
+}
+.second-sight {
+  color: #404040 !important;
+}
+
+[class*='aboutMeBody'] {
+  line-height: normal;
+  overflow: auto;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/*[class*='headerText-'], [class*='showTag'] {
+  background-color: rgba(180, 180, 230, 100);
+  border-radius: 1px;
+}
+
+[class*='showTag'] {
+  padding-left: 10px;
+  position: relative;
+  left: -4px;
+}*/

@@ -1,0 +1,80 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+#
+# programs used: wireplumber, acpilight, wireless-tools, playerctl
+#
+#
+# Global properties
+
+# I STOLE THIS FROM KIRA (they gave it to me :3)
+separator=true
+separator_block_width=20
+
+[disk1]
+color=#ff7b0c
+command=echo -e "avail:$(df -h | grep -A1 '/dev/disk' | head -n 2 | tail -n 1 | awk -F ' ' '{print $3}')"
+interval=3600
+
+[disk2]
+color=#ff7b0c
+command=echo -e "use%:$(df -h | grep -A1 '/dev/disk' | head -n 2 | tail -n 1 | awk -F ' ' '{print $4}')"
+interval=3600
+
+[blank2]
+command=echo "                                                "
+interval=once
+
+[date]
+command=date +'%D'
+interval=3600
+
+[time]
+command=date +'%T'
+interval=1
+align=center
+
+[blank]
+# perfectly centered as all things should be
+command=echo "                                                                             "
+interval=once
+
+[username]
+color=#f5af19
+command=echo "$USER"
+interval=once
+
+[audio]
+command=echo -e "\uf028 $(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -c 8-12)"
+interval=5
+signal=1
+
+[brightness]
+command=echo -e "\uf185 $(light -G)"
+interval=30
+signal=2
+
+# [network]
+# command=echo -e "\uf1eb  $(iwgetid --raw)"
+# interval=30
+
+[battery]
+command=echo -e "\uf240  $(cat /sys/class/power_supply/BAT0/capacity)%"
+interval=20
+
+[charging]
+color=#edf909
+command=echo -e "\uf0e7 $(cat /sys/class/power_supply/AC0/online | awk '{if ($1=="1") {printf "C"} else {printf "D"}}')"
+interval=20
+
+[dunst]
+command=$SCRIPT_DIR/dunst
+markup=pango
+interval=once
+format=json
+min_width=15
+#align=center
+#DUNST_MUTE=off

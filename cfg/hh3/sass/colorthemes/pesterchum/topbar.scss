@@ -1,0 +1,63 @@
+.item-3mHhwr {
+  border-radius: 0 !important;
+  background-color: var(--p-teriary) !important;
+  color: black !important;
+  border: .3vh solid;
+  border-color: var(--p-secondary);
+  margin: 0 5px !important;
+}
+
+.iconWrapper-2awDjA>svg,
+.iconWrapper-2awDjA>svg>foreignObject>svg {
+  color: black !important;
+}
+
+.iconWrapper-2awDjA>svg:hover,
+.iconWrapper-2awDjA:hover>svg>foreignObject>svg {
+  color: rgba(0, 0, 0, 0.7) !important;
+}
+
+div.status-12NUUC>svg {
+  background-color: black;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+div.status-12NUUC>svg>rect {
+  margin: 0 auto;
+}
+
+.chat-2ZfjoI>.title-31SJ6t.container-ZMc96U.themed-Hp1KC_>.children-3xh0VB>h3 {
+  color: black;
+}
+
+.akaBadge-3i7V3p {
+  background-color: black;
+  color: white;
+}
+
+.nicknames-10Sg6e.overflow-1wOqNV {
+  color: black;
+}
+
+.title-31SJ6t.container-ZMc96U.themed-Hp1KC_>.children-3xh0VB>.topic-11NuQZ.expandable-3CaLeS {
+  color: black;
+}
+
+.title-31SJ6t {
+  background-color: var(--p-secondary) !important;
+}
+
+.searchBar-jGtisZ {
+  width: unset;
+  min-width: 85px;
+}
+
+.children-3xh0VB:after {
+  background: none !important;
+}
+
+[aria-label*="Notification Settings"], [aria-label*="Help"]  {
+  display: none;
+}

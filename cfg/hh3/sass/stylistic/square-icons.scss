@@ -1,0 +1,26 @@
+//taken from 0cord
+//this pure css looks kind of ugly but it's ok cause it works
+
+/* Square icons */
+[class*='blobContainer-'] [class*='wrapper-'] [class*='icon-'],
+[class*='listItem-'] [class*='wrapper-'] a,
+[class*='listItem-'] [class*='wrapper-'] a [class*='childWrapper-'],
+foreignObject [class*='wrapper-'] [class*='childWrapper-'],
+foreignObject [class*='wrapper-'] [class*='icon'],
+[class*='circleIconButton'],
+[class*='wrapperSimple-'] {
+    border-radius: 20% !important;
+}
+
+[class*='avatarMasked-'],
+[class*='maskProfile-'],
+[class*='mask-'],
+[class*='avatar-'] svg[class*='mask-'] > foreignObject,
+[class*='avatarWrapper-'] svg[class*='mask-'] > foreignObject,
+[class*='avatarHint-'] > foreignObject,
+[class*='wrapper-'] svg[class*='mask-'] > foreignObject,
+[class*='blobContainer-'] [class*='wrapper-'] foreignObject,
+[class*='listItemWrapper-'] [class*='wrapper-'] foreignObject {
+    mask: none !important;
+    -webkit-mask-image: none !important;
+}

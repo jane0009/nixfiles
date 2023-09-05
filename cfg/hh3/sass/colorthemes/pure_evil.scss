@@ -1,0 +1,254 @@
+$pureblack: #000;
+$black: #040404;
+$offblack: #111;
+$offgray: #222;
+$lightgray: #aaa;
+$offwhite: #ddd;
+$white: #fff;
+
+//window border
+//
+//
+[class*='bg'] {
+  background-color: $pureblack;
+}
+
+//guild list
+//
+//
+
+[class*='guilds'] {
+  background-color: $pureblack;
+  & > [class*='scroller'] {
+    background-color: $pureblack;
+  }
+}
+
+[class*='listItem'] {
+  [class*='childWrapper'] {
+    background-color: $offgray;
+  }
+}
+
+[class*='folder-'], [class*='circleIconButton'] {
+  background-color: $offgray;
+}
+
+[class*='expandedFolderBackground'] {
+  background-color: $offblack;
+}
+
+//member list
+//
+//
+
+[class*='member-'] {
+  background-color: $pureblack;
+}
+
+//channel list
+//
+//
+
+[class*='container-'] {
+  [class*='clickable'] [class*='header'] {
+    background-color: $offblack;
+    & [class*='name'], & [class*='guildIconContainer'] {
+      z-index: 10;
+    }
+  } 
+  [class*='scroller']  {
+    background-color: $pureblack;
+  }
+}
+
+[class*='modeMuted'] [class*='name-'] {
+  color: $lightgray;
+  font-weight: lighter;
+}
+
+[class*='modeSelected'] [class*='name-'] {
+  color: $white;
+  font-weight: 500;
+}
+
+[class*='name-'] {
+  color:$offwhite;
+}
+
+[class*='modeUnread'] [class*='name-'] {
+  font-weight: bolder;
+}
+
+//title
+//
+//
+
+[class*='chat'] > [class*='title-'] {
+  background-color: $offblack !important;
+}
+
+//message bar
+//
+//
+
+[class*='form-'] {
+  background-color: $pureblack;
+  &::before {
+    background: none !important;
+  }
+}
+
+[class*='channelTextArea'] {
+  border-radius: 3px;
+  background-color: $offblack;
+  [class*='scrollable'] {
+    background-color: $offblack;
+  }
+  [class*='scrollable']::-webkit-scrollbar {
+    display: none;
+  }
+  [class*='buttons'] {
+    right: 10px;
+  }
+  [class*='inner'] {
+    background-color: $offblack;
+  }
+}
+
+//user info panel
+//
+//
+
+[class*='panels'] {
+  background-color: $pureblack;
+}
+
+//friends list
+//
+//
+
+[class*='searchBar'] {
+  background-color: $pureblack;
+  &>button {
+    background-color: transparent !important;
+  }
+}
+
+[class*='privateChannels'] {
+  [class*='selected'] {
+    background-color: $black;
+  }
+}
+
+[class*='nowPlaying'] {
+  background-color: $pureblack;
+  [class*='itemCard'] {
+    background-color: $offblack;
+  }
+  [class*='inset'] {
+    background-color: $offgray;
+  }
+}
+
+[class*='content'] > [class*='container'] > [class*='container'],
+[class*='headerBar'] {
+  background-color: $pureblack !important;
+}
+
+//user settings
+//
+//
+
+[class*='sidebarRegionScroller'],
+[class*='contentRegionScroller']
+{
+  background-color: $pureblack;
+}
+
+//embeds
+//
+//
+
+[class*='embedWrapper'] {
+  background-color: $offblack;
+  border-color: $offgray;
+}
+
+//indicators
+//
+//
+
+[class*='unreadBar'],
+[class*='unreadMentionsBar'] {
+    background-color: $offgray;
+    opacity: 1;
+}
+
+//user popout and modal
+//
+//
+
+[class*='headerPlaying'], [class*='headerNormal'] {
+  background-color: $offblack !important;
+}
+
+[class*='userPopout'] {
+  [class*='body'],
+  [class*='footer'] {
+    background-color: $pureblack;
+  }
+  [class*='footer'] > [class*='inputWrapper'] {
+    background-color: $offblack;
+  }
+}
+
+[class*='modal'] {
+  [class*='header'],
+  [class*='tabBarContainer'] {
+    background-color: $offblack;
+    border-top-color: $black;
+  }
+  [class*='body'] {
+    background-color: $pureblack;
+  }
+}
+
+[class*='note'] {
+  &>textarea:active, &>textarea:focus {
+    background-color: $black !important;
+  }
+}
+
+[class*='tabBarItem'][class*='selected'],
+[class*='tabBarItem']:hover {
+  border-bottom-color: $offgray !important;
+}
+
+//scrollbars
+//
+//
+
+[class*='buttons'] [class*='wrapper'] {
+  background-color: $offblack;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $offblack !important;
+}
+
+*::-webkit-scrollbar-track-piece {
+  background-color: $pureblack !important;
+  border: transparent !important;
+}
+
+*::-webkit-scrollbar {
+  border-radius: 25px;
+}
+
+[class*='contentWrapper'], 
+[class*='categorySection-'] > [class*='wrapper-'],
+[class*='categoryList-'],
+[class*='inspector-'] {
+  background-color: $offblack;
+}

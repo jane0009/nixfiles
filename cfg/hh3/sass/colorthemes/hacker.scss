@@ -1,0 +1,8 @@
+* {
+  font-family: 'Consolas', cursive, sans-serif !important;
+  color: #009900 !important;
+}
+div[class*='content'] > *, div[class*='container'], div[class*='scroller'], 
+div[class*='textArea'], div[class*='buttons'], div[class*='attachWrapper'] {
+  background-color: #000100 !important;
+}

@@ -1,0 +1,29 @@
+span[class*="expandedFolderBackground-"] {
+  left: 0;
+  top: 0;
+  width: 100%;
+  margin-bottom: -3.5px;
+  height: inherit !important;
+  background-color: transparent !important;
+}
+
+&,
+[role="group"] {
+  // get rid of the huge empty space at the bottom. hackily.
+  margin-bottom: -20px;
+  display: inline;
+  height: unset !important;
+  width: 54px;
+
+  div[class*="listItem-"] {
+    &:first-child {
+      margin-left: 6px;
+    }
+    //margin: 0 auto;
+  }
+}
+
+&,
+& > div[class*="listItem-"] {
+  width: 48px;
+}

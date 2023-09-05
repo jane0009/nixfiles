@@ -1,0 +1,38 @@
+$--member-group-text: hsla(0, 0%, 100%, .4);
+$--member-group-transparent: hsla(0, 0%, 100%, 0);
+
+
+[class*='chat-'] [class*='content-'] {
+
+    [class^='membersWrap-'] {
+        margin-right: -185px;
+        transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+        [class^='memberInner-'] {
+            transform: translateX(10px);
+            transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        }
+    }
+
+    [class^='membersWrap-']:hover {
+        transform: translateX(-185px);
+        border-left: 1px solid hsla(0, 0%, 100%, 0.06);
+        transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        [class^='memberInner-'],
+        [class^='membersGroup-'] {
+            transform: translateX(0);
+            color: $--member-group-text;
+        }
+    }
+
+    [class^='membersGroup-'] {
+        transform: translateX(52px);
+        transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+        color: $--member-group-transparent;
+    }
+}
+
+[class *='membersListNotices-'] {
+  width: unset;
+}

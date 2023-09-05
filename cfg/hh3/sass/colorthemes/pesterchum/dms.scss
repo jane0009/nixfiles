@@ -1,0 +1,36 @@
+[class*="privateChannels-"] {
+  background-color: var(--p-secondary);
+  & > [class*="scroller-"] {
+    background-color: var(--p-secondary);
+  }
+}
+
+[class*="linkButtonIcon-"] {
+  color: black;
+}
+
+[class*="interactiveSelected-"] > 
+[class*="link-"] > 
+[class*="avatarWithText-"] >
+[class*="avatar-"] >
+[class*="linkButtonIcon-"] {
+    color: white !important;
+}
+
+[class*="avatarWithText-"] {
+  color: black;
+}
+
+.searchBar-3TnChZ > button,
+.searchBar-2aylmZ > [class*="inner-"] {
+  background-color: var(--p-primary) !important;
+  color: white !important;
+}
+
+.iconContainer-6pgShY > svg {
+  color: white;
+}
+
+[class*="default-colors"] > [class*="userPanelInner-"] {
+  background: var(--p-secondary);
+}

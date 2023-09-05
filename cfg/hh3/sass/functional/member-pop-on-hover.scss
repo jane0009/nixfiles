@@ -1,0 +1,25 @@
+@keyframes margin-out {
+    to {
+        margin-left: 7px;
+    }
+}
+
+@keyframes margin-in {
+    to {
+        margin-left: 0px;
+    }
+}
+
+[class*='members-'] [class*='member'] {
+    margin-left: 7px;
+    animation-duration: 1s;
+    animation-name: margin-out;
+    animation-fill-mode: forwards;
+}
+
+[class*='members-'] [class*='member']:hover {
+    animation-duration: 0.5s;
+    animation-name: margin-in;
+    animation-fill-mode: forwards;
+}
+

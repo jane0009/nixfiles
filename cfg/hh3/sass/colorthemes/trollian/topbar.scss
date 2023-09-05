@@ -1,0 +1,27 @@
+[class*="sidebar-"] [class*="header-"], [class*="privateChannels-"] [class*="searchBar-"] {
+  background: var(--trollian-gradient) 100%;
+  & * {
+    color: white;
+  }
+}
+
+[class*="chat-"] {
+  background-color: var(--trollian-pink);
+
+  & [class*="title-"] {
+    background: var(--trollian-gradient);
+    color: white;
+
+    & [class*="children-"]::after {
+      display: none;
+    }
+
+    border-bottom-right-radius: 10px;
+  }
+  & [class*="searchBar-"] {
+    background-color: var(--trollian-gray);
+    & * {
+      color: white;
+    }
+  }
+}

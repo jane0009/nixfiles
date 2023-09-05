@@ -1,0 +1,29 @@
+* {
+  font-family: Courier, monospace !important;
+
+  code {
+    font-family: Courier, monospace !important;
+  }
+}
+
+@-moz-keyframes scroll-left {
+  0% {
+    -moz-transform: translateX(100%);
+  }
+
+  100% {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+[class*="markup-"] {
+  font-weight: 500;
+
+  &>strong {
+    font-weight: 900;
+  }
+}
+
+[class*="channelName-"] {
+  overflow-style: marquee, panner;
+}

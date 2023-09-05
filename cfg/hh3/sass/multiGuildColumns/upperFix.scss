@@ -1,0 +1,27 @@
+// Fixes DM area statuses
+
+[class*="friendsOnline-"],
+.server-count {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  margin-top: 5px;
+}
+
+/* These are for servercount ext :eyes: */
+@if $servercount {
+  [class*="friendsOnline"] {
+    padding-left: 13%;
+  }
+
+  .server-count {
+    right: 13%;
+    top: -18px;
+  }
+}
+
+div[class^="guildSeparator-"] {
+  position: relative;
+  // width: 100%;
+  margin-top: 10px;
+}

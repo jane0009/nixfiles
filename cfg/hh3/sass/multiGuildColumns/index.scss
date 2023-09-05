@@ -1,0 +1,50 @@
+[class^="numberBadge-"] {
+  height: 18px;
+  width: 16px;
+  border-radius: 3px;
+}
+
+@import "./settings.scss";
+
+$guild-icon-width: 58px;
+$guild-list-width: calc(#{$guild-icon-width} * #{$guild-columns});
+
+div[class*="container-"] > div[class*="base-"] {
+  //left: $guild-list-width;
+}
+
+[class*="wrapper-"][class*="guilds-"] {
+  &,
+  & [class*="scrollerBase-"] {
+    width: $guild-list-width; // 187.5px;
+  }
+
+  @import "./unreads";
+
+  // [class*="scrollerWrap-"] {
+  //   width: calc(75px * #{$guild-columns}); // 225px;
+  // }
+
+  /* other stuff for columns */
+
+  div[class*="scroller-"] {
+    display: flex;
+    flex-flow: row wrap;
+    padding-left: 0;
+    align-content: flex-start;
+
+    @if $guild-columns-center {
+      &,
+      & > div[aria-label] {
+        justify-content: center;
+        width: calc(58px * #{$guild-columns});
+      }
+    }
+
+    @import "./dmList";
+
+    @import "./upperFix";
+
+    @import "./guildIcon";
+  }
+}

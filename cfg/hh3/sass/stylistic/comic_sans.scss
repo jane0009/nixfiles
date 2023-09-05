@@ -1,0 +1,38 @@
+
+@keyframes piss {
+  0% {
+    background-color: #ff0000;
+    color: #ff00ff;
+  }
+  20% {
+    background-color: #ff6600;
+    color: #0000ff;
+  }
+  40% {
+    background-color: #ffff00;
+    color: #00ffff;
+  }
+  60% {
+    background-color: #00ff00;
+     color: #00ff00;
+    
+  }
+  75% {
+    background-color: #00ffff;
+    color: #ffff00;
+  }
+  90% {
+    background-color: #0000ff;
+    color: #ff6600;
+  }
+  100% {
+    background-color: #ff00ff;
+    color: #ff0000;
+  }
+}
+
+* {
+  animation: piss 60s linear 1s infinite normal !important;
+  font-family: 'Comic Sans MS', cursive, sans-serif !important;
+  border-radius: 5px !important;
+}

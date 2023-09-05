@@ -1,0 +1,124 @@
+div[class*="messages-"] {
+  &:after {
+    height: 16px;
+  }
+}
+
+[class*="replyAvatar-"] {
+  @import "./settings";
+  border: none;
+  border-radius: $avatar-radius !important;
+}
+
+/*
+half compact mode
+puts avatars and display names on one line, making avatars smaller
+*/
+div[class*="message-"][class*="cozyMessage-"] {
+  @import "./settings";
+  & > [aria-disabled="true"] {
+    padding: 6px 0;
+  }
+
+  &[class*="groupStart-"] {
+    margin-top: 0.45rem;
+  }
+
+  &[class*="mentioned-"] {
+    background-color: unset;
+    &:before {
+      display: none;
+    }
+    div[class*="markup-"] {
+      background-color: var(--background-mentioned);
+      border-left: #faa61a 4px solid;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+      margin-left: -6px;
+      padding-left: 2px;
+    }
+  }
+
+  div[class*="buttonContainer-"] {
+    top: 0;
+    div[aria-label^="Add Reaction: "] {
+      display: none;
+    }
+    div[class*="separator-"] {
+      display: none;
+    }
+  }
+
+  div[class*="contentCozy-"] {
+    // Nah this just breaks stuff
+    // margin-top: calc(-#{$header-height} + 1.375rem);
+    margin-top: 0;
+    margin-left: $indent-amount !important;
+  }
+
+  h2[class*="headerCozyMeta-"] {
+    /* span[class*="usernameWrapper-"] { */
+    margin-left: $avatar-username-spacing;
+    margin-top: calc((#{$header-height} - 1em) / 2);
+    /* } */
+  }
+
+  margin-left: $indent-amount;
+
+  span[class*="timestampCozyAlt-"] {
+    left: unset;
+    right: 0;
+    bottom: 0;
+  }
+
+  h2[class*="header-"] {
+    margin-left: 0;
+    // margin-left: $indent-amount;
+    // margin-bottom: 0.2em;
+    padding-left: 0;
+    /* vertical-align: bottom; */
+    display: inline;
+  }
+
+  img[class*="avatar-"] {
+    margin: 0;
+    height: $header-height !important;
+    width: $header-height !important;
+    border-radius: $avatar-radius;
+
+    position: unset;
+    top: unset;
+    left: unset;
+    display: inline-block;
+
+    margin-right: 0.25rem;
+    vertical-align: bottom;
+  }
+
+  // TODO: Please, parent selector :weary:
+  // padding: $message-padding 0;
+  padding: 0;
+
+  // TODO: Should this have a class?
+  hr {
+    border: 0 !important;
+  }
+
+  div[class*="localBotMessage-"] {
+    margin-top: 0;
+    margin-left: calc(1em + #{$indent-amount});
+  }
+
+  div[class*="container-"] {
+    padding: 0;
+  }
+
+  div[class*="containerCozy-"][class*="container-"] {
+    margin-bottom: 0;
+  }
+
+  .divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
