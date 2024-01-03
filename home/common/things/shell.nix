@@ -1,17 +1,15 @@
-{ lib, pkgs, ... }:
-
 {
+  lib,
+  pkgs,
+  ...
+}: {
   # nushell
   programs.starship = {
     enable = true;
-    settings = {
-
-    };
+    settings = {};
   };
   programs.zellij = {
     enable = true;
-    settings = {
-      
-    };
+    settings = {};
   };
 }

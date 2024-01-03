@@ -1,11 +1,17 @@
-{ lib, pkgs, specialArgs, inputs, ... }:
-let
+{
+  lib,
+  pkgs,
+  specialArgs,
+  inputs,
+  ...
+}: let
   common = import ../common/home-common.nix {
     inherit lib pkgs specialArgs inputs;
   };
 in
-rec {
+  rec {
     imports = [
-        ../common/dotcfg-common.nix
+      ../common/dotcfg-common.nix
     ];
-} // common
+  }
+  // common

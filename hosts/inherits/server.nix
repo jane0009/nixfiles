@@ -1,4 +1,8 @@
-{lib, config, pkgs, ...}:
 {
-    # todo
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  # todo
 }

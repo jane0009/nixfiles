@@ -1,95 +1,99 @@
-{lib, config, pkgs, ...}:
 {
-    # enable gui
-    services.xserver = {
-        enable = true;
-        layout = "us";
-        desktopManager = {
-            xterm.enable = true;
-            xfce = {
-            enable = false;
-            noDesktop = true;
-            enableXfwm = false;
-            };
-        };
-        displayManager = {
-            defaultSession = "none+i3";
-        };
-        windowManager.i3 = {
-            enable = true;
-            extraPackages = with pkgs; [ rofi i3blocks i3status i3lock ];
-        };
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
+  # enable gui
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    desktopManager = {
+      xterm.enable = true;
+      xfce = {
+        enable = false;
+        noDesktop = true;
+        enableXfwm = false;
+      };
     };
-
-    # opengl!!!!!!!!
-    hardware.opengl = {
+    displayManager = {
+      defaultSession = "none+i3";
+    };
+    windowManager.i3 = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      extraPackages = with pkgs; [rofi i3blocks i3status i3lock];
     };
+  };
 
-    # fonts
-    fonts.packages = with pkgs; [
-        fira-code
-        unifont
-        font-awesome
-        noto-fonts
-        noto-fonts-cjk
-        noto-fonts-emoji
-        corefonts
-        courier-prime
-        (nerdfonts.override { fonts = [ "Inconsolata" "Iosevka" ]; })
-    ];
-    fonts.fontDir.enable = true;
-    fonts.fontconfig.defaultFonts.monospace = [ "Courier Prime" "Inconsolata" ];
+  # opengl!!!!!!!!
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
 
-    # the usual suspects
-    environment.systemPackages = with pkgs; [
-        gcr
-        pulseaudio
-        alsa-utils
-        blueberry # not every system will have bluetooth, but who cares
-        feh
-        ffmpeg
-        ffmpegthumbnailer
-        webp-pixbuf-loader
-        gnome-epub-thumbnailer
-        evince
-        f3d
-    ];
-    programs.dconf.enable = true;
+  # fonts
+  fonts.packages = with pkgs; [
+    fira-code
+    unifont
+    font-awesome
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    corefonts
+    courier-prime
+    (nerdfonts.override {fonts = ["Inconsolata" "Iosevka"];})
+  ];
+  fonts.fontDir.enable = true;
+  fonts.fontconfig.defaultFonts.monospace = ["Courier Prime" "Inconsolata"];
 
-    # fm
+  # the usual suspects
+  environment.systemPackages = with pkgs; [
+    gcr
+    pulseaudio
+    alsa-utils
+    blueberry # not every system will have bluetooth, but who cares
+    feh
+    ffmpeg
+    ffmpegthumbnailer
+    webp-pixbuf-loader
+    gnome-epub-thumbnailer
+    evince
+    f3d
+  ];
+  programs.dconf.enable = true;
+
+  # fm
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+    plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
   };
   services.tumbler.enable = true;
   services.gvfs.enable = true;
 
   # security
-    security.polkit = {
+  security.polkit = {
     enable = true;
     extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      if (subject.isInGroup("users") 
-      && (
-        action.id == "org.freedesktop.login1.reboot" ||
-        action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
-        action.id == "org.freedesktop.login1.power-off" ||
-        action.id == "org.freedesktop.login1.power-off-multiple-sessions"
-      )) {
-        return polkit.Result.YES;
-      }
-    })
+      polkit.addRule(function(action, subject) {
+        if (subject.isInGroup("users")
+        && (
+          action.id == "org.freedesktop.login1.reboot" ||
+          action.id == "org.freedesktop.login1.reboot-multiple-sessions" ||
+          action.id == "org.freedesktop.login1.power-off" ||
+          action.id == "org.freedesktop.login1.power-off-multiple-sessions"
+        )) {
+          return polkit.Result.YES;
+        }
+      })
     '';
   };
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
     description = "polkit-gnome-auth";
-    wantedBy = [ "graphical-session.target"  ];
-    wants = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
+    wantedBy = ["graphical-session.target"];
+    wants = ["graphical-session.target"];
+    after = ["graphical-session.target"];
     serviceConfig = {
       Type = "simple";
       ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
@@ -124,6 +128,7 @@
       user = "jane";
       password = "AAAA1313v56"; # dummy password until i can agenix things
     };
+    openDefaultPorts = true;
   };
 
   services.printing.enable = true;

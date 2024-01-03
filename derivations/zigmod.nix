@@ -1,13 +1,14 @@
-{pkgs
-, stdenv
-, callPackage
-, fetchFromGitHub
-, cacert
-, git
-, zig
-, lib
-, ...}:
-let
+{
+  pkgs,
+  stdenv,
+  callPackage,
+  fetchFromGitHub,
+  cacert,
+  git,
+  zig,
+  lib,
+  ...
+}: let
   pname = "zigmod";
   version = "88";
 
@@ -54,34 +55,34 @@ let
     outputHash = "sha256-pVj8pWPLbLHg6UEpHv/Jz6KhPBXJbggWJwNySB7a6KY=";
   };
 in
-stdenv.mkDerivation {
-  inherit pname version src preBuild;
+  stdenv.mkDerivation {
+    inherit pname version src preBuild;
 
-  nativeBuildInputs = [
-    zig
-  ];
+    nativeBuildInputs = [
+      zig
+    ];
 
-  postUnpack = ''
-    mkdir -p $sourceRoot/${depsDir}
-    tar -xf ${deps} -C $sourceRoot/${depsDir}
-  '';
+    postUnpack = ''
+      mkdir -p $sourceRoot/${depsDir}
+      tar -xf ${deps} -C $sourceRoot/${depsDir}
+    '';
 
-  buildPhase = ''
-    runHook preBuild
+    buildPhase = ''
+      runHook preBuild
 
-    zig build -Dmode=ReleaseSafe -Dcpu=baseline -Dtag=${version} --prefix $out
+      zig build -Dmode=ReleaseSafe -Dcpu=baseline -Dtag=${version} --prefix $out
 
-    runHook postBuild
-  '';
+      runHook postBuild
+    '';
 
-  passthru.tests = callPackage ./tests { };
+    passthru.tests = callPackage ./tests {};
 
-  meta = {
-    description = "A package manager for the Zig programming language";
-    homepage = "https://github.com/nektro/zigmod";
-    changelog = "https://github.com/nektro/zigmod/releases/tag/r${version}";
-    license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ paveloom ];
-    inherit (zig.meta) platforms;
-  };
-}
+    meta = {
+      description = "A package manager for the Zig programming language";
+      homepage = "https://github.com/nektro/zigmod";
+      changelog = "https://github.com/nektro/zigmod/releases/tag/r${version}";
+      license = lib.licenses.mit;
+      maintainers = with lib.maintainers; [paveloom];
+      inherit (zig.meta) platforms;
+    };
+  }

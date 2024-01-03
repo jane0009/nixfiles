@@ -1,13 +1,18 @@
-{ lib, config, pkgs, ... }:
-let rogauracore = (pkgs.callPackage ../../derivations/rogauracore.nix  {});
-in
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: let
+  rogauracore = pkgs.callPackage ../../../derivations/rogauracore.nix {};
+in {
   imports = [
-    ../inherits/base.nix
-    ../inherits/gui-nvidia.nix
-    ../inherits/emulation.nix
-    ../inherits/development.nix
-    ../inherits/ssd.nix
+    ../../inherits/base.nix
+    ../../inherits/gui-nvidia.nix
+    ../../inherits/emulation.nix
+    ../../inherits/development.nix
+    ../../inherits/ssd.nix
+    ../../inherits/tailscale.nix
   ];
   # the  most important stuff first
   boot.loader.systemd-boot.enable = true;
@@ -25,7 +30,7 @@ in
     random = true;
     wifi = true;
   };
-  home-manager.users.jane = ../../home/shimmy/home.nix;
+  home-manager.users.jane = ../../../home/shimmy/home.nix;
 
   # hardware
   hardware.bluetooth.enable = true;
@@ -36,11 +41,11 @@ in
     settings = {
       battery = {
         governor = "powersave";
-	      turbo = "never";
+        turbo = "never";
       };
       charger = {
         governor = "performance";
-	      turbo = "auto";
+        turbo = "auto";
       };
     };
   };
@@ -56,15 +61,9 @@ in
   xdg.portal.enable = true;
   services.flatpak.enable = true;
 
-  # i hate this SO much.
-  environment.systemPackages = [ 
-    pkgs.busybox
-    rogauracore 
+  environment.systemPackages = [
+    rogauracore
   ];
-
-
-  # system specific config
-  networking.hostName = "shimmy";
 
   # i fucking hate windows
   time.hardwareClockInLocalTime = true;

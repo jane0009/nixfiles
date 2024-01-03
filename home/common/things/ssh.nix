@@ -8,7 +8,7 @@ in {
     enable = true;
 
     matchBlocks = {
-      # [CENSORED]
+      "[CENSORED]" = gitConfig;
     };
   };
   # programs.git.config = gitConfig;

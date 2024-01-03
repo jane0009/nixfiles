@@ -1,5 +1,9 @@
-{lib, config, pkgs, ...}:
 {
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   boot.loader.systemd-boot.memtest86.enable = true;
   boot.loader.timeout = 10;
 

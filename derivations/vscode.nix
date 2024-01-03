@@ -1,6 +1,8 @@
-{ pkgs, lib, ... }:
-
-let
+{
+  pkgs,
+  lib,
+  ...
+}: let
   inherit (pkgs) vscode-extensions vscode-utils vscode-with-extensions vscode-marketplace;
   exts = with vscode-marketplace; [
     arrterian.nix-env-selector
@@ -20,11 +22,13 @@ let
     hbenl.vscode-test-explorer
     elmtooling.elm-ls-vscode
   ];
-in vscode-with-extensions.override {
-vscodeExtensions = with vscode-extensions;
-    [
-    bbenoist.nix
-    dhall.dhall-lang
-    ms-vscode-remote.remote-ssh
-    ] ++ exts;
-}
+in
+  vscode-with-extensions.override {
+    vscodeExtensions = with vscode-extensions;
+      [
+        bbenoist.nix
+        dhall.dhall-lang
+        ms-vscode-remote.remote-ssh
+      ]
+      ++ exts;
+  }

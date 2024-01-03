@@ -1,25 +1,24 @@
-{ lib
-, stdenv
-, cacert
-, git
-, zig
-, zigmod
-}:
-
-{ pname
-, version
-, src
-, lockFile
-, manifestFile
-, depsOutputHash
-, buildFlags ? ""
-, meta ? { }
-, nativeBuildInputs ? [ ]
-, postUnpack ? ""
-, preBuild ? ""
-, ...
-} @ attrs:
-let
+{
+  lib,
+  stdenv,
+  cacert,
+  git,
+  zig,
+  zigmod,
+}: {
+  pname,
+  version,
+  src,
+  lockFile,
+  manifestFile,
+  depsOutputHash,
+  buildFlags ? "",
+  meta ? {},
+  nativeBuildInputs ? [],
+  postUnpack ? "",
+  preBuild ? "",
+  ...
+} @ attrs: let
   depsDir = ".zigmod";
 
   deps = stdenv.mkDerivation {
@@ -62,33 +61,44 @@ let
     outputHashMode = "recursive";
   };
 in
-stdenv.mkDerivation (attrs // {
-  inherit pname version src;
+  stdenv.mkDerivation (attrs
+    // {
+      inherit pname version src;
 
-  nativeBuildInputs = [
-    zig
-    zigmod
-  ] ++ nativeBuildInputs;
+      nativeBuildInputs =
+        [
+          zig
+          zigmod
+        ]
+        ++ nativeBuildInputs;
 
-  postUnpack = ''
-    mkdir -p $sourceRoot/${depsDir}
-    tar -xf ${deps} -C $sourceRoot/${depsDir}
-  '' + postUnpack;
+      postUnpack =
+        ''
+          mkdir -p $sourceRoot/${depsDir}
+          tar -xf ${deps} -C $sourceRoot/${depsDir}
+        ''
+        + postUnpack;
 
-  buildPhase = attrs.buildPhase or ''
-    runHook preBuild
+      buildPhase =
+        attrs.buildPhase
+        or ''
+          runHook preBuild
 
-    zigmod fetch
-    zig build -Doptimize=ReleaseSafe -Dcpu=baseline ${buildFlags} --prefix $out
+          zigmod fetch
+          zig build -Doptimize=ReleaseSafe -Dcpu=baseline ${buildFlags} --prefix $out
 
-    runHook postBuild
-  '';
+          runHook postBuild
+        '';
 
-  preBuild = ''
-    export XDG_CACHE_HOME="$(mktemp -d)"
-  '' + preBuild;
+      preBuild =
+        ''
+          export XDG_CACHE_HOME="$(mktemp -d)"
+        ''
+        + preBuild;
 
-  meta = {
-    inherit (zig.meta) platforms;
-  } // meta;
-})
+      meta =
+        {
+          inherit (zig.meta) platforms;
+        }
+        // meta;
+    })

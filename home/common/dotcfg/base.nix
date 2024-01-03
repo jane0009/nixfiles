@@ -1,6 +1,9 @@
-{ lib, pkgs, ... }:
 {
-    home.file.".config/nushell" = {
+  lib,
+  pkgs,
+  ...
+}: {
+  home.file.".config/nushell" = {
     source = ../../../cfg/nushell;
     recursive = true;
   };
@@ -15,5 +18,5 @@
   home.file.".config/starship" = {
     source = ../../../cfg/starship;
     recursive = true;
-  };    
+  };
 }

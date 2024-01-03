@@ -1,9 +1,7 @@
-{ pkgs }:
-
-{
+{pkgs}: {
   programs.neovim = {
     enable = true;
-    plugins = with pkgs.vimPlugins; [ gruvbox-nvim ];
+    plugins = with pkgs.vimPlugins; [gruvbox-nvim];
     extraConfig = ''
       colorscheme gruvbox
       set noswapfile

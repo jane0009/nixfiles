@@ -1,6 +1,8 @@
-{ lib, pkgs, ... }:
-
-let
+{
+  lib,
+  pkgs,
+  ...
+}: let
   screenshot_folder = "/home/julian/Screenshots";
   save_screenshots = false;
   elixire_token = "";
@@ -44,4 +46,4 @@ let
         ${lib.optionalString (!save_screenshots) "rm $target"}
     fi
   '';
-in { home.packages = with pkgs; [ screenie ]; }
+in {home.packages = with pkgs; [screenie];}
