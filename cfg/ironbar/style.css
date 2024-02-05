@@ -1,0 +1,300 @@
+/* css vars don't work. annoying */
+
+@define-color gradient1color1 rgb(254, 240, 224);
+@define-color gradient1color2 rgb(244, 169, 158);
+@define-color gradient1color3 rgb(238, 214, 215);
+@define-color gradient2color1 rgb(129, 200, 190);
+@define-color gradient2color2 rgb(244, 184, 228);
+@define-color gradient2color3 rgb(153, 209, 219);
+@define-color gradient2color4 rgb(202, 158, 230);
+@define-color gradient3color1 rgba(202, 158, 230, 1);
+@define-color gradient3color2 rgba(245, 194, 231, 1);
+@define-color gradient3color3 rgba(180, 190, 254, 1);
+@define-color gradient3color4 rgba(137, 180, 250, 1);
+@define-color gradient4color1 rgba(180, 190, 254, 1);
+@define-color gradient4color2 rgba(137, 220, 235, 1);
+@define-color gradient4color3 rgba(137, 180, 250, 1);
+@define-color gradient4color4 rgba(166, 227, 161, 1);
+@define-color gradient5color1 rgb(244, 219, 214);
+@define-color gradient5color2 rgb(223, 221, 238);
+@define-color gradient5color3 rgb(245, 208, 225);
+@define-color gradient6color1 rgb(175, 206, 224);
+@define-color gradient6color2 rgb(146, 182, 244);
+@define-color gradient6color3 rgb(119, 165, 191);
+@define-color red rgb(235, 77, 75);
+@define-color orange rgb(234, 153, 156);
+@define-color lightorange rgb(231, 212, 203);
+@define-color blue rgb(140, 170, 238);
+@define-color lightblue rgb(205, 214, 244);
+@define-color darkblue rgb(81, 96, 121);
+@define-color purple rgb(203, 166, 247);
+@define-color darkgray rgb(48, 52, 70); 
+@define-color white rgb(255,255,255);
+@define-color trans rgba(0,0,0,0);
+@define-color transred rgba(255,0,0,0.5);
+
+.container {
+  font-family: FiraCode Nerd Font;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+#cava {
+  font-family: Terminess Nerd Font;
+}
+
+.time {
+  font-size: 13px;
+  font-weight: normal;
+  padding: 0px 10px 0px 10px;
+  background: linear-gradient(45deg, @gradient1color1 0%, @gradient1color2 50%, @gradient1color3 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+  border-radius: 16px;
+  margin: 10px 10px 10px 10px;
+  font-family: Terminess Nerd Font;
+}
+
+.clock_date {
+  font-family: Terminess Nerd Font;
+  font-weight: normal;
+  font-size: 13px;
+  color: rgb(49, 50, 68);
+}
+
+
+.background {
+  background-color: @trans;
+}
+
+.popup-clock {
+  font-weight: bolder;
+  background: @darkgray;
+}
+
+.popup-pwr {
+  background: @orange;
+  color: @darkgray;
+  background: linear-gradient(45deg, @gradient2color1 0%, @gradient2color2 43%, @gradient2color3 80%, @gradient2color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  border: none;
+}
+
+#power-btn {
+  padding: 0px 20px 0px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  margin-left: 0px;
+  border-radius: 15px;
+  background: @orange;
+  background: linear-gradient(45deg, @gradient2color1 0%, @gradient2color2 43%, @gradient2color3 80%, @gradient2color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  border: none;
+  font-weight: bolder;
+  box-shadow: rgba(0, 0, 0, 0.25) 2px 2px 5px 2px;
+}
+
+#shutdown {
+  background: @orange;
+}
+
+#reboot {
+  background: @blue;
+}
+
+#hibernation {
+  box-shadow: rgba(0, 0, 0, 0.35) 2px 2px 5px 2px;
+  background: @gradient2color3;
+}
+
+/* base */
+.sysinfo .item,
+.script,
+.tray {
+  padding: 0px 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 15px;
+  background: @lightblue;
+  color: @darkblue;
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+}
+
+.scale,
+.internet,
+.script {
+  transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  border-radius: 15px;
+  background: @gradient2color4;
+  background: linear-gradient(45deg, @gradient3color1 0%, @gradient3color2 43%, @gradient3color3 80%, @gradient3color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  color: @white;
+}
+
+
+scale trough {
+  border-radius: 16px;
+  background-color: @lightorange;
+  box-shadow: 0 2px 3px 2px rgba(00, 00, 00, 0.4);
+  min-height: 10px;
+  min-width: 70px;
+  margin: 0px 5px 10px 10px;
+}
+
+scale value {
+  color: @lightblue;
+  font-size: 0px;
+}
+
+scale trough highlight {
+  background-image: linear-gradient(to right, @gradient6color1 30%, @gradient6color2 50%, @gradient6color3 100%);
+  border-radius: 10px;
+  background-color: @gradient6color1;
+}
+
+.focused {
+  color: rgb(84, 111, 175);
+  font-size: 13px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
+  background: rgb(238, 190, 190);
+  background: linear-gradient(45deg, @gradient5color1 0%, @gradient5color2 43%, @gradient5color3 100%);
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+  border-radius: 16px;
+}
+
+
+/* cpu */
+.sysinfo .item:nth-child(1) {
+  background: rgb(180, 190, 254);
+  background: linear-gradient(52deg, @gradient4color1 0%, @gradient4color2 32%, @gradient4color3 72%, @gradient4color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 20s ease infinite;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  color: @white;
+}
+
+.clock {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.377);
+  border: none;
+  border-radius: 15px;
+  font-size: 13px;
+  background: @gradient2color4;
+  background: linear-gradient(45deg, @gradient3color1 0%, @gradient3color2 43%, @gradient3color3 80%, @gradient3color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  color: @white;
+}
+
+.tray {
+  color: @blue;
+  font-size: 10px;
+  padding: 0px 10px 0px 10px;
+  margin: 10px 10px 10px 0px;
+  background: @orange;
+  background: linear-gradient(45deg, @gradient5color1 0%, @gradient5color2 43%, @gradient5color3 100%);
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+  border-radius: 16px;
+}
+
+.tray>.passive {
+  -gtk-icon-effect: dim;
+}
+
+.tray>.needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+.workspaces {
+  font-family: Terminess Nerd Font;
+  font-weight: normal;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 10px 0px 0px 20px;
+  border-radius: 16px;
+}
+
+.workspaces .item {
+  box-shadow: rgba(0, 0, 0, 0.116) 2px 2px 5px 2px;
+  border: unset;
+  background: @white;
+  border-radius: 15px;
+  margin: 12px 10px 12px 0px;
+  padding: 5px 10px 5px 10px;
+  color: @purple;
+}
+
+.workspaces .item.focused {
+  border: unset;
+  font-size: 13px;
+  transition: all 0.5s cubic-bezier(0.5, 1, 0.89, 1);
+  box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.377);
+  padding: 5px 15px 5px 15px;
+  border-radius: 16px;
+  margin: 12px 10px 12px 0px;
+  background: @gradient2color4;
+  background: linear-gradient(45deg, @gradient3color1 0%, @gradient3color2 43%, @gradient3color3 80%, @gradient3color4 100%);
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+  color: @white;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+tooltip.background {
+  background-color: rgba(00, 00, 00, 0.5);
+  font-size: 10px;
+  border-radius: 10px;
+  color: @white;
+}
+
+tooltip * {
+  padding: 4px;
+  background-color: transparent;
+  color: @white;
+}
+
+.host tooltip {
+  background-color: @transred;
+}

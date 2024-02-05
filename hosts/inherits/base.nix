@@ -5,6 +5,9 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./firewall.nix
+  ];
   # always enable flakes
   nix.package = pkgs.nixFlakes;
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -28,21 +31,6 @@
   ];
 
   networking.networkmanager.enable = true;
-  # firewall working properly
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [80 443];
-    allowedUDPPortRanges = [
-      {
-        from = 4000;
-        to = 4007;
-      }
-      {
-        from = 8000;
-        to = 8010;
-      }
-    ];
-  };
 
   # privkey openssh on all systems
   services.openssh = {
@@ -51,9 +39,13 @@
     settings.PasswordAuthentication = false;
   };
 
+  # nix-ld
+  programs.nix-ld.enable = true;
+
   # home-manager
   home-manager.useGlobalPkgs = true;
   home-manager.extraSpecialArgs = {
+    inherit inputs;
     server = false;
     dev = false;
     gui = false;

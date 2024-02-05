@@ -48,12 +48,12 @@
       syncthingtray
       feh
       libnotify
-      dunst
+      #dunst
       networkmanagerapplet
       networkmanager_dmenu
 
       # default gui apps
-      alacritty
+      # alacritty
       firefox
       flameshot
       sonixd
@@ -81,8 +81,7 @@
     ];
 
     development = [
-      nodejs
-      nodePackages.pnpm
+      fnm
       fenix.default.toolchain
       fenix.rust-analyzer
       temurin-bin-18

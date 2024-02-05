@@ -5,7 +5,7 @@
   ...
 }: let
   url = "hs";
-  domain = "[CENSORED]";
+  domain = "j4.pm";
 in {
   services.headscale = {
     enable = true;

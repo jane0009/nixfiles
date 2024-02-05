@@ -1,0 +1,4 @@
+{...}: {
+  requires = ["gui"];
+  has = ["system"];
+}

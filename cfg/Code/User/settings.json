@@ -1,6 +1,6 @@
 {
     "files.autoSave": "afterDelay",
-    "workbench.colorTheme": "2077",
+    "workbench.colorTheme": "Night Owl",
     "editor.codeActionsOnSave": {
         
     },
@@ -12,5 +12,7 @@
       "plaintext": false,
       "scminput": false
     },
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "editor.tabSize": 2,
+    "window.zoomLevel": -1
 }

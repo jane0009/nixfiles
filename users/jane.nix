@@ -10,7 +10,9 @@
 rec {
   #
   environment.systemPackages = [
+    pkgs.nushell
     pkgs.ponysay
+    pkgs.fortune
     pkgs.carapace
   ];
   users = {

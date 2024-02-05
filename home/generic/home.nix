@@ -4,14 +4,9 @@
   specialArgs,
   inputs,
   ...
-}: let
-  common = import ../common/home-common.nix {
-    inherit lib pkgs specialArgs inputs;
-  };
-in
-  rec {
-    imports = [
-      ../common/dotcfg-common.nix
-    ];
-  }
-  // common
+}: rec {
+  imports = [
+    ../common/home-common.nix
+    ../common/dotcfg-common.nix
+  ];
+}

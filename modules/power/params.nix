@@ -1,0 +1,4 @@
+{...}: {
+  has = ["system"];
+  requires = ["base"];
+}

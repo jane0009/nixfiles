@@ -554,4 +554,12 @@ def start_zellij [] {
   }
 }
 
-start_zellij
+let blacklisted_terms = [ "vt102" ]
+
+let is_wt = (try { (not ($env | get WT_SESSION | is-empty)) } catch { false })
+
+if ($env.TERM not-in $blacklisted_terms) and (not $is_wt) {
+  start_zellij
+} else {
+  source "/home/jane/.config/nushell/greet.nu"
+}

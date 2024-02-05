@@ -1,0 +1,44 @@
+* {
+	background-image: none;
+}
+window {
+	background-color: rgba(12, 12, 12, 0.9);
+}
+button {
+    color: #FFFFFF;
+	background-color: #1E1E1E;
+	border-style: solid;
+	border-width: 2px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 25%;
+}
+
+button:focus, button:active, button:hover {
+	background-color: #3700B3;
+	outline-style: none;
+}
+
+#lock {
+    background-image: image(url("/home/jane/.config/wlogout/lock.png"), url("/home/jane/.config/wlogout/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/home/jane/.config/wlogout/logout.png"), url("/home/jane/.config/wlogout/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/home/jane/.config/wlogout/suspend.png"), url("/home/jane/.config/wlogout/suspend.png"));
+}
+
+#hibernate {
+    background-image: image(url("/home/jane/.config/wlogout/hibernate.png"), url("/home/jane/.config/wlogout/hibernate.png"));
+}
+
+#shutdown {
+    background-image: image(url("/home/jane/.config/wlogout/shutdown.png"), url("/home/jane/.config/wlogout/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/home/jane/.config/wlogout/reboot.png"), url("/home/jane/.config/wlogout/reboot.png"));
+}

@@ -5,6 +5,7 @@ let
   cts = [
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG2G/cWAlFDH0qTphAB3zdFtG+OoEg/WanPM4mb2PY1v" # ct 104, hillbilly
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDrVoPEg6mvQxgtjkvlbRv+WUuThk5iKDCnEU1oPMdny" # ct 107, sweetiebelle
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIONxLkjC0YPOc3MvFKHh16qlaWRowaB8mGkhzd/0l+hi" # ct 112, carcrash
   ];
   pubkeys =
     hosts
@@ -20,4 +21,5 @@ let
     ];
 in {
   "gitssh.age".publicKeys = pubkeys;
+  "wifi.age".publicKeys = pubkeys;
 }

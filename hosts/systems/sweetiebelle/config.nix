@@ -8,7 +8,7 @@
     ../../inherits/base.nix
     ../../inherits/firewall.nix
     ../../inherits/server.nix
-    #        ../../inherits/tailscale.nix
+    ../../inherits/tailscale.nix
     ../../inherits/docs-off.nix
   ];
 

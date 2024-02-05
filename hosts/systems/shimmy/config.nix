@@ -5,14 +5,17 @@
   ...
 }: let
   rogauracore = pkgs.callPackage ../../../derivations/rogauracore.nix {};
+  getNetworkSettings = import ../../inherits/get-network-settings.nix {inherit config lib;};
 in {
   imports = [
     ../../inherits/base.nix
     ../../inherits/gui-nvidia.nix
+    ../../inherits/hyprland.nix
     ../../inherits/emulation.nix
     ../../inherits/development.nix
     ../../inherits/ssd.nix
     ../../inherits/tailscale.nix
+    ../../inherits/vnc.nix
   ];
   # the  most important stuff first
   boot.loader.systemd-boot.enable = true;
@@ -82,4 +85,26 @@ in {
 
   services.xserver.libinput.enable = true;
   services.gnome.gnome-keyring.enable = true;
+
+  # set ip address
+  networking.networkmanager.ensureProfiles = getNetworkSettings [
+    {
+      type = "wifi";
+      name = "Z7JL2-5G";
+      interface = "wlo1";
+      password = "$PW_Z7JL2";
+      auth-alg = "open";
+      key-mgmt = "wpa-psk";
+      static = true;
+      gateway = "192.168.1.1";
+      ip = "192.168.1.217/24";
+    }
+    {
+      type = "ethernet";
+      name = "Wired connection 1";
+      interface = "eno2";
+      gateway = "192.168.1.1";
+      ip = "192.168.1.217/24";
+    }
+  ];
 }

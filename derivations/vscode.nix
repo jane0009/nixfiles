@@ -8,7 +8,8 @@
     arrterian.nix-env-selector
     github.copilot
     esbenp.prettier-vscode
-    endormi."2077-theme"
+    dbaeumer.vscode-eslint
+    sdras.night-owl
     tanmay.slack-theme
     aaronduino.nix-lsp
     brettm12345.nixfmt-vscode
@@ -21,6 +22,7 @@
     ms-vscode.test-adapter-converter
     hbenl.vscode-test-explorer
     elmtooling.elm-ls-vscode
+    thenuprojectcontributors.vscode-nushell-lang
   ];
 in
   vscode-with-extensions.override {

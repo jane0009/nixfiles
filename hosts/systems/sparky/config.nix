@@ -22,6 +22,7 @@ in {
   imports = [
     ../../inherits/base.nix
     ../../inherits/gui-amd.nix
+    ../../inherits/i3.nix
     ../../inherits/emulation.nix
     ../../inherits/development.nix
     ../../inherits/ssd.nix
